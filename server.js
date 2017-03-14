@@ -2,6 +2,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 var fs = require("fs");
 
 // Sets up the Express App
@@ -18,12 +19,12 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({
     type: "application/vnd.api+json"
 }));
-
+app.use(express.static(__dirname + '/public'));
 friends = [];
 
 // Routes
 // =============================================================
-require("./app/routing/htmlRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app, path);
 require("./app/routing/apiRoutes.js")(app, fs, friends);
 
 
@@ -37,12 +38,18 @@ app.listen(PORT, function () {
                 var obj = JSON.parse(data);
                 for (i = 0; i < obj.length; i++) {
                     friends.push(obj[i]);
-                    console.log("Adding " + obj[i].name + " to friends array.")
+                    console.log("Adding " + obj[i].name + " to friends array.");
+                    addFriend(obj[i]);
                 }
             });
         }
     });
 });
+
+function addFriend(friend) {
+    
+}
+
 
 function fileExists(file, cb) {
     fs.stat(file, function fsStat(err, stats) {
