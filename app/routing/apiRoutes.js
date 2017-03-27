@@ -1,6 +1,6 @@
 
-module.exports = function (app, fs, friends) {
-    app.post("/api/friends", function (req, res) {
+module.exports = function (app, fs, friends, questions) {
+    app.post("/api/survey", function (req, res) {
         var newFriend = req.body;
         console.log("In friends POST - object is:");
         console.log(newFriend);
@@ -10,11 +10,26 @@ module.exports = function (app, fs, friends) {
             if (err) throw err;
             console.log("friend saved");
         });
-        res.json(newFriend);
+        return res.json(newFriend, friends);
         // res.data = true;
     });
 
     app.get("/api/friends", function (req, res) {
-        res.json(friends);
+        // console.log("getting friends");
+        // console.log(friends);
+        return res.json(friends);
     });
+
+    app.get("/api/friendslength", function (req, res) {
+        // console.log("getting friends");
+        // console.log(friends);
+        return friends.length;
+    });
+
+    app.get("/api/questions", function (req, res) {
+        // console.log("getting friends");
+        // console.log(friends);
+        return res.json(questions);
+    });
+
 }

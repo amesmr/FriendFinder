@@ -13,13 +13,14 @@
     <!--from rotating card-->
     <meta name="viewport" content="width=device-width" />
     <link href='x_rotating_card_v1.4/css/bootstrap.css' rel='stylesheet' />
-    <link href='x_rotating_card_v1.4/css/demo.css' rel='stylesheet' />
     <link href='x_rotating_card_v1.4/css/rotating-card.css' rel='stylesheet' />
-    <!-- end rotating card-->
 
-    <link href="x_paper_kit_v1.2.2/bootstrap3/css/bootstrap.css" rel="stylesheet" />
-    <link href="x_paper_kit_v1.2.2/assets/css/ct-paper.css" rel="stylesheet" />
-    <link href="x_paper_kit_v1.2.2/assets/css/demo.css" rel="stylesheet" />
+    <!-- from formden -->
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="/css/style.css">
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -39,109 +40,285 @@
     <!-- end navbar  -->
 
 
-    <div id="carousel">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <div class="carousel slide" data-ride="carousel">
 
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="card-container">
-                            <div class="card">
-                                <div class="front">
-                                    <div class="cover">
-                                        <img src="x_rotating_card_v1.4/images/rotating_card_thumb2.png" />
-                                    </div>
-                                    <div class="user">
-                                        <img class="img-circle" src="x_rotating_card_v1.4/images/rotating_card_profile3.png" />
-                                    </div>
-                                    <div class="content">
-                                        <div class="main">
-                                            <h3 class="name">John Marvel</h3>
-                                            <p class="profession">CEO</p>
-                                            <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah,
-                                                they love me everywhere"</p>
-                                        </div>
-                                        <div class="footer">
-                                            <i class="fa fa-mail-forward"></i> Auto Rotation
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end front panel -->
-                                <div class="back">
-                                    <div class="header">
-                                        <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                                    </div>
-                                    <div class="content">
-                                        <div class="main">
-                                            <h4 class="text-center">Job Description</h4>
-                                            <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
-                                            <div class="stats-container">
-                                                <div class="stats">
-                                                    <h4>235</h4>
-                                                    <p>
-                                                        Followers
-                                                    </p>
-                                                </div>
-                                                <div class="stats">
-                                                    <h4>114</h4>
-                                                    <p>
-                                                        Following
-                                                    </p>
-                                                </div>
-                                                <div class="stats">
-                                                    <h4>35</h4>
-                                                    <p>
-                                                        Projects
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="footer">
-                                        <div class="social-links text-center">
-                                            <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                            <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                            <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end back panel -->
-                            </div>
-                            <!-- end card -->
+    <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+    <div class="bootstrap-iso">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 my-survey">
+                    <div class="formden_header">
+                        <h2>
+                            Friend Finder
+                        </h2>
+                        <p>
+                            Tell us about yourself
+                        </p>
+                    </div>
+                    <form method="post">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="name">Name</label>
+                            <input class="form-control" id="name" name="name" type="text" />
                         </div>
-                        <!-- end card-container -->
-                    </div>
-                    <div class="item">
-                        <img src="x_paper_kit_v1.2.2/assets/paper_img/shoes.jpg" alt="Awesome Image">
-                    </div>
-                    <div class="item">
-                        <img src="x_paper_kit_v1.2.2/assets/paper_img/types.jpg" alt="Awesome Image">
-                    </div>
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="desc">Describe Yourself briefly
+<span class="asteriskField">*</span>
+</label>
+                            <input class="form-control" id="description" name="description" placeholder="I'm a ... who likes to ...  I want to ..." type="text" />
+                            <span class="help-block" id="hint_desc">A brief description of who you are and what you like.</span>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="seeking">Seeking...<span class="asteriskField">*</span></label>
+                            <input class="form-control" id="seeking" name="seeking" placeholder="I'm looking for a ... who likes to ... and believes in..."
+                                type="text" />
+                            <span class="help-block" id="hint_seeking">Tell us a little about who you hope to meet.</span>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="pic_link">Your picture
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <input class="form-control" id="pic_link" name="pic_link" placeholder="https://somewhere.where.you.have.a.picture.com" type="text"
+                            />
+                            <span class="help-block" id="hint_pic_link">Please paste a link to use as your image.  Please be honest. (Facebook maybe?  Note: MUST BE FROM A SECURE (HTTPS) address)</span>
+                        </div>
+                        <div class="form-group" id="div_social">
+                            <label class="control-label requiredField" for="social"><span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="social" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="social" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="social" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="social" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="social" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_social">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_books">
+                            <label class="control-label requiredField" for="books">
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class=" ">
+                                <label class="radio-inline">
+                                    <input name="books" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="books" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="books" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="books" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="books" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_books">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_outdoors">
+                            <label class="control-label requiredField" for="outdoors">How important is spending time enjoying the outdoors to you?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="outdoors" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="outdoors" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="outdoors" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="outdoors" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="outdoors" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_outdoors">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_gourmet">
+                            <label class="control-label requiredField" for="gourmet">How important is fancy gourmet food to you?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="gourmet" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="gourmet" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="gourmet" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="gourmet" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="gourmet" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_gourmet">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_travel">
+                            <label class="control-label requiredField" for="travel">How important is travel to you?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="travel" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="travel" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="travel" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="travel" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="travel" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_travel">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_movies">
+                            <label class="control-label requiredField" for="movies">How important are movies to you?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="movies" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="movies" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="movies" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="movies" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="movies" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_movies">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_family">
+                            <label class="control-label requiredField" for="family">How important is spending time with your family?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="family" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="family" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="family" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="family" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="family" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_family">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_pretty">
+                            <label class="control-label requiredField" for="pretty">How important is it to you that your partner be physically attractive?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="pretty" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="pretty" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="pretty" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="pretty" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="pretty" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_pretty">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_sex">
+                            <label class="control-label requiredField" for="sex">How important is physical intimacy with your partner?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="sex" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_sex">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="div_forever">
+                            <label class="control-label requiredField" for="forever">How important is it to you that you find your partner-for-life on this website?
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <div class="">
+                                <label class="radio-inline">
+                                    <input name="forever" type="radio" value="1"/>1
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="forever" type="radio" value="2"/>2
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="forever" type="radio" value="3"/>3
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="forever" type="radio" value="4"/>4
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="forever" type="radio" value="5"/>5
+                                </label>
+                                <span class="help-block" id="hint_forever">1 is Very Important, 5 is Not Important at All</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button class="btn btn-primary" name="submit" type="submit" id="add-friend">Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                    <span class="fa fa-angle-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                    <span class="fa fa-angle-right"></span>
-                </a>
             </div>
         </div>
-        <!-- end carousel -->
-
-
-
     </div>
 
 
@@ -149,22 +326,76 @@
     <!-- Modal Bodies come here -->
 
     <!--   end modal -->
+    <!-- after the survey, show the user the car of the person who is their best match -->
+    <div class="card-container hidden">
+        <div class="card">
+            <div class="front">
+                <div class="cover">
+                    <img src="x_rotating_card_v1.4/images/rotating_card_thumb2.png" />
+                </div>
+                <div class="user">
+                    <img class="img-circle" src="x_rotating_card_v1.4/images/rotating_card_profile3.png" />
+                </div>
+                <div class="content">
+                    <div class="main">
+                        <h3 class="name">John Marvel</h3>
+                        <p class="profession">CEO</p>
+                        <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    </div>
+                    <div class="footer">
+                        <i class="fa fa-mail-forward"></i> Auto Rotation
+                    </div>
+                </div>
+            </div>
+            <!-- end front panel -->
+            <div class="back">
+                <div class="header">
+                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                </div>
+                <div class="content">
+                    <div class="main">
+                        <h4 class="text-center">Job Description</h4>
+                        <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+
+                        <div class="stats-container">
+                            <div class="stats">
+                                <h4>235</h4>
+                                <p>
+                                    Followers
+                                </p>
+                            </div>
+                            <div class="stats">
+                                <h4>114</h4>
+                                <p>
+                                    Following
+                                </p>
+                            </div>
+                            <div class="stats">
+                                <h4>35</h4>
+                                <p>
+                                    Projects
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end back panel -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end card-container -->
 
 
 </body>
+<script src="x_rotating_card_v1.4/js/jquery-1.10.2.js" type="text/javascript">
 
-<script src="x_paper_kit_v1.2.2/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="x_paper_kit_v1.2.2/assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+</script>
+<script src="x_rotating_card_v1.4/js/bootstrap.min.js" type="text/javascript"></script>
+</script>
 
-<script src="x_paper_kit_v1.2.2/bootstrap3/js/bootstrap.js" type="text/javascript"></script>
-
-<!--  Plugins -->
-<script src="x_paper_kit_v1.2.2/assets/js/ct-paper-checkbox.js"></script>
-<script src="x_paper_kit_v1.2.2/assets/js/ct-paper-radio.js"></script>
-<script src="x_paper_kit_v1.2.2/assets/js/bootstrap-select.js"></script>
-<script src="x_paper_kit_v1.2.2/assets/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-
-<script src="x_paper_kit_v1.2.2/assets/js/ct-paper.js"></script>
+<script src="js/survey.js">
+</script>
 
 </html>

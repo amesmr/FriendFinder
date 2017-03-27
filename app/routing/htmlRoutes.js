@@ -11,10 +11,13 @@ module.exports = function (app, path) {
     app.get("/img/*", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/img/" + req.params[0]));
     });
-    app.get("/x_paper_kit_v1.2.2/*", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/css/x_paper_kit_v1.2.2/" + req.params[0]));
-    });
     app.get("/x_rotating_card_v1.4/*", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/css/x_rotating_card_v1.4/" + req.params[0]));
+    });
+    app.get("/server/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../../server.js"));
+    });
+    app.get("/js/*", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/js/" + req.params[0]));
     });
 }
