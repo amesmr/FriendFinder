@@ -1,19 +1,20 @@
 const cardThumb = "x_rotating_card_v1.4/images/rotating_card_thumb2.png";
 
-var friendslength = 0;
+var friendslength;
 $(document).ready(function () {
     // friends array defined global in server.js
     function init() {
         console.log("in survey init");
         $.get("/api/questions", function (questions) {
-            console.log(questions);
+            // console.log(questions);
             for (i in questions) {
-                console.log(questions[i]);
+                // console.log(questions[i]);
                 $("label[for=" + questions[i].name + "]").text(questions[i].question);
             }
         });
         $.get("api/friendslength", function (data) {
             friendslength = data;
+            console.log("friendslength = " + friendslength);
         });
     }
 
@@ -21,31 +22,34 @@ $(document).ready(function () {
     $("#add-friend").on("click", function (event) {
         event.preventDefault();
         // make a newFriend obj
+        var myScores = [];
+        myScores.push($("input:radio[name='social']:checked").val());
+        myScores.push($("input:radio[name='books']:checked").val());
+        myScores.push($("input:radio[name='outdoors']:checked").val());
+        myScores.push($("input:radio[name='gourmet']:checked").val());
+        myScores.push($("input:radio[name='travel']:checked").val());
+        myScores.push($("input:radio[name='movies']:checked").val());
+        myScores.push($("input:radio[name='family']:checked").val());
+        myScores.push($("input:radio[name='pretty']:checked").val());
+        myScores.push($("input:radio[name='sex']:checked").val());
+        myScores.push($("input:radio[name='forever']:checked").val());
+
+        console.log("my scores: " + myScores);
         var newFriend = {
             name: $("#name").val().trim(),
             index: friendslength,
-            description: $("#about_me").val().trim(),
+            about_me: $("#about_me").val().trim(),
             seeking: $("#seeking").val().trim(),
-            pic_link: $("#photo").val().trim(),
-            scores: [
-                $("#social").val(),
-                $("#books").val(),
-                $("#outdoors").val(),
-                $("#gourmet").val(),
-                $("#travel").val(),
-                $("#movies").val(),
-                $("#family").val(),
-                $("#pretty").val(),
-                $("#sex").val(),
-                $("#forever").val()
-            ]
+            photo: $("#photo").val().trim(),
+            scores: myScores
         }
+        friendslength++;
+        console.log("friendslength is " + friendslength);
         console.log("newFriend:");
         console.log(newFriend);
         $.post("/api/survey", newFriend)
-            .done(function (me, everybody) {
-                console.log(me);
-                findMatch(me, everybody);
+            .done(function (everybody) {
+                findMatch(newFriend, everybody);
             });
     });
 
@@ -54,72 +58,81 @@ $(document).ready(function () {
         var diffArry = [
             []
         ];
-        var tmpDiff = 0
-        console.log(everybody);
+        var tmpDiff = 0;
+        var friend;
+        // first, remove current user from the array
         for (i in everybody) {
-            if (everybody[i].index = me.index) {
-                diffArry[i] = i;
-                diffArry[i][0] = null;
-                continue;
+            if (everybody[i].index == me.index) {
+                everybody.splice(i, 1);
+                console.log("removed element " + i + " from everybody array");
+                break;
             }
-            for (j in everybody.scores) {
-                tmpDiff += me.scores[j] - everybody[i].scores[j];
+        }
+        console.log(everybody);
+
+        // now go find their closest match
+        for (i in everybody) {
+            tmpDiff = 0;
+            for (j in everybody[i].scores) {
+                // accumulate the difference for each question
+                tmpDiff += parseInt(me.scores[j]) - parseInt(everybody[i].scores[j]);
             }
-            diffArry[i] = i;
-            diffArry[i][0] = tmpDiff;
-            console.log("pre-sorted array:");
-            console.log(diffArry);
-            diffArry.sort(function compareSecondColumn(a, b) {
-                if (a[1] === b[1]) {
-                    return 0;
-                } else {
-                    return (a[1] < b[1]) ? -1 : 1;
-                }
-            });
-            console.log("sorted array:");
-            console.log(diffArry);
+            // put it into an array
+            diffArry.push([tmpDiff, everybody[i].index]);
+        }
+        diffArry.shift(); // the first element is an empty one from the var declaration
+        console.log("unsorted array:");
+        console.log(diffArry);
+        diffArry.sort(function (a, b) {
+            return b[0] - a[0];
+        });
+        console.log("sorted array:");
+        console.log(diffArry);
 
-            // best match should be in diffArry[0]
+        // best match should be in diffArry[0]
 
-            // hide the form
-            $(".my-class").addClass("hidden");
-            // show the flip card
-            $(".card-container").removeClass("hidden");
-            addFriendCard(0, diffArry[0])
+        // hide the form
+        $(".my-class").addClass("hidden");
+        // show the flip card
+        $(".card-container").removeClass("hidden");
+        for (i in everybody) {
+            if (everybody[i].index == diffArry[0][1]) {
+                friend = everybody[i];
+            }
 
         }
+        console.log("Matched friend:");
+        console.log(friend);
+
+        $.get("/api/questions", function (questions) {
+            addFriendCard(friend, questions);
+        });
+
     }
 
 
-    function addFriendCard(index, friend) {
+    function addFriendCard(friend, questions) {
         // start of flip card
         // front of card
-        var thisRow = Math.floor(index / 3);
-        console.log("Index is " + index);
-        console.log("This row is " + thisRow);
-        if ((index % 3) == 0) {
-            console.log("Adding row " + thisRow);
-            var row = $("<div>");
-            // row.addClass("row row" + thisRow);
-            row.addClass("row cards" + thisRow);
-            $(".container").append(row);
-
-            // var offset = $("<div>");
-            // offset.addClass("col-sm10 col-sm-offset-1 cards" + thisRow);
-            // row.append(offset);
-        }
+        var row = $("<div>");
+        // row.addClass("row row" + thisRow);
+        $(".container").append(row);
         var col = $("<div>");
-        col.addClass("col-md-4 col-sm-6");
-        $(".cards" + thisRow).append(col);
+        col.addClass("col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4");
+        row.append(col);
+
+        var h2 = $("<h2>");
+        h2.html("Meet Your Closest Match!");
+        col.append(h2);
 
         var card_cont = $("<div>");
-        // card_cont.addClass("card-container manual-flip");
-        card_cont.addClass("card-container");
-        col.append(card_cont);
+        card_cont.addClass("manual-flip");
+        $(".card-container").removeClass("hidden");
+        $(".main-form").addClass("hidden");
 
         var card = $("<div>");
         card.addClass("card");
-        card_cont.append(card);
+        $(".card-container").append(card);
 
         var front = $("<div>");
         front.addClass("front");
@@ -195,11 +208,21 @@ $(document).ready(function () {
 
         var title = $("<h4>");
         title.html("Survey Scores");
+        if (typeof (friend.scores) == "undefined") {
+            var scores = friend["scores[]"];
+            console.log(friend.name + "'s scores were undefined in survey.js.  Working around it.  Thanks, Renzo. ;)");
+            for (i = 0; i < scores.length; i++) {
+                var p = $("<p>");
+                p.html(questions[i].question + " = " + scores[i]);
+                backMain.append(p);
+            }
+        } else {
+            for (i = 0; i < friend.scores.length; i++) {
+                var p = $("<p>");
+                p.html(questions[i].question + " = " + friend.scores[i]);
+                backMain.append(p);
+            }
 
-        for (i = 0; i < friend.scores.length; i++) {
-            var p = $("<p>");
-            p.html(friend.scores[i]);
-            backMain.append(p);
         }
 
         var backFooter = $("<div>");

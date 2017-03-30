@@ -10,7 +10,7 @@ module.exports = function (app, fs, friends, questions) {
             if (err) throw err;
             console.log("friend saved");
         });
-        return res.json(newFriend, friends);
+        return res.json(friends);
         // res.data = true;
     });
 
@@ -23,7 +23,7 @@ module.exports = function (app, fs, friends, questions) {
     app.get("/api/friendslength", function (req, res) {
         // console.log("getting friends");
         // console.log(friends);
-        return friends.length;
+        return res.json(friends.length);
     });
 
     app.get("/api/questions", function (req, res) {

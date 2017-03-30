@@ -54,50 +54,55 @@
                             Tell us about yourself
                         </p>
                     </div>
-                    <form method="post">
+                    <form method="post" class="main-form">
                         <div class="form-group ">
                             <label class="control-label requiredField" for="name">Name</label>
                             <input class="form-control" id="name" name="name" type="text" />
                         </div>
                         <div class="form-group ">
                             <label class="control-label requiredField" for="desc">Describe Yourself briefly
-<span class="asteriskField">*</span>
-</label>
-                            <input class="form-control" id="description" name="description" placeholder="I'm a ... who likes to ...  I want to ..." type="text" />
-                            <span class="help-block" id="hint_desc">A brief description of who you are and what you like.</span>
+                                <span class="asteriskField">*</span>
+                            </label>
+                            <input class="form-control" id="about_me" name="about_me" placeholder="I'm a ... who likes to ...  I want to ..." type="text"
+                            />
+                            <span class="help-block" id="hint_about_me">A brief description of who you are and what you like.</span>
                         </div>
                         <div class="form-group ">
-                            <label class="control-label requiredField" for="seeking">Seeking...<span class="asteriskField">*</span></label>
+                            <label class="control-label requiredField" for="seeking">Seeking...
+                                <span class="asteriskField">*</span>
+                            </label>
                             <input class="form-control" id="seeking" name="seeking" placeholder="I'm looking for a ... who likes to ... and believes in..."
                                 type="text" />
                             <span class="help-block" id="hint_seeking">Tell us a little about who you hope to meet.</span>
                         </div>
                         <div class="form-group ">
-                            <label class="control-label requiredField" for="pic_link">Your picture
+                            <label class="control-label requiredField" for="photo">Your picture
                                 <span class="asteriskField">*</span>
                             </label>
-                            <input class="form-control" id="pic_link" name="pic_link" placeholder="https://somewhere.where.you.have.a.picture.com" type="text"
+                            <input class="form-control" id="photo" name="photo" placeholder="https://somewhere.where.you.have.a.picture.com" type="text"
                             />
-                            <span class="help-block" id="hint_pic_link">Please paste a link to use as your image.  Please be honest. (Facebook maybe?  Note: MUST BE FROM A SECURE (HTTPS) address)</span>
+                            <span class="help-block" id="hint_photo">Please paste a link to use as your image. Please be honest. (Facebook maybe? Note: MUST BE FROM
+                                A SECURE (HTTPS) address)</span>
                         </div>
                         <div class="form-group" id="div_social">
-                            <label class="control-label requiredField" for="social"><span class="asteriskField">*</span>
+                            <label class="control-label requiredField" for="social">
+                                <span class="asteriskField">*</span>
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="social" type="radio" value="1"/>1
+                                    <input name="social" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="social" type="radio" value="2"/>2
+                                    <input name="social" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="social" type="radio" value="3"/>3
+                                    <input name="social" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="social" type="radio" value="4"/>4
+                                    <input name="social" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="social" type="radio" value="5"/>5
+                                    <input name="social" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_social">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -108,19 +113,19 @@
                             </label>
                             <div class=" ">
                                 <label class="radio-inline">
-                                    <input name="books" type="radio" value="1"/>1
+                                    <input name="books" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="books" type="radio" value="2"/>2
+                                    <input name="books" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="books" type="radio" value="3"/>3
+                                    <input name="books" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="books" type="radio" value="4"/>4
+                                    <input name="books" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="books" type="radio" value="5"/>5
+                                    <input name="books" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_books">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -131,19 +136,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="outdoors" type="radio" value="1"/>1
+                                    <input name="outdoors" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="outdoors" type="radio" value="2"/>2
+                                    <input name="outdoors" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="outdoors" type="radio" value="3"/>3
+                                    <input name="outdoors" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="outdoors" type="radio" value="4"/>4
+                                    <input name="outdoors" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="outdoors" type="radio" value="5"/>5
+                                    <input name="outdoors" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_outdoors">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -154,19 +159,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="gourmet" type="radio" value="1"/>1
+                                    <input name="gourmet" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="gourmet" type="radio" value="2"/>2
+                                    <input name="gourmet" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="gourmet" type="radio" value="3"/>3
+                                    <input name="gourmet" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="gourmet" type="radio" value="4"/>4
+                                    <input name="gourmet" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="gourmet" type="radio" value="5"/>5
+                                    <input name="gourmet" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_gourmet">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -177,19 +182,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="travel" type="radio" value="1"/>1
+                                    <input name="travel" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="travel" type="radio" value="2"/>2
+                                    <input name="travel" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="travel" type="radio" value="3"/>3
+                                    <input name="travel" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="travel" type="radio" value="4"/>4
+                                    <input name="travel" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="travel" type="radio" value="5"/>5
+                                    <input name="travel" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_travel">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -200,19 +205,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="movies" type="radio" value="1"/>1
+                                    <input name="movies" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="movies" type="radio" value="2"/>2
+                                    <input name="movies" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="movies" type="radio" value="3"/>3
+                                    <input name="movies" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="movies" type="radio" value="4"/>4
+                                    <input name="movies" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="movies" type="radio" value="5"/>5
+                                    <input name="movies" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_movies">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -223,19 +228,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="family" type="radio" value="1"/>1
+                                    <input name="family" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="family" type="radio" value="2"/>2
+                                    <input name="family" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="family" type="radio" value="3"/>3
+                                    <input name="family" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="family" type="radio" value="4"/>4
+                                    <input name="family" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="family" type="radio" value="5"/>5
+                                    <input name="family" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_family">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -246,19 +251,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="pretty" type="radio" value="1"/>1
+                                    <input name="pretty" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="pretty" type="radio" value="2"/>2
+                                    <input name="pretty" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="pretty" type="radio" value="3"/>3
+                                    <input name="pretty" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="pretty" type="radio" value="4"/>4
+                                    <input name="pretty" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="pretty" type="radio" value="5"/>5
+                                    <input name="pretty" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_pretty">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -269,19 +274,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="sex" type="radio" value="1"/>1
+                                    <input name="sex" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="sex" type="radio" value="2"/>2
+                                    <input name="sex" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="sex" type="radio" value="3"/>3
+                                    <input name="sex" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="sex" type="radio" value="4"/>4
+                                    <input name="sex" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="sex" type="radio" value="5"/>5
+                                    <input name="sex" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_sex">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -292,19 +297,19 @@
                             </label>
                             <div class="">
                                 <label class="radio-inline">
-                                    <input name="forever" type="radio" value="1"/>1
+                                    <input name="forever" type="radio" value="1" />1
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="forever" type="radio" value="2"/>2
+                                    <input name="forever" type="radio" value="2" />2
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="forever" type="radio" value="3"/>3
+                                    <input name="forever" type="radio" value="3" />3
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="forever" type="radio" value="4"/>4
+                                    <input name="forever" type="radio" value="4" />4
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="forever" type="radio" value="5"/>5
+                                    <input name="forever" type="radio" value="5" />5
                                 </label>
                                 <span class="help-block" id="hint_forever">1 is Very Important, 5 is Not Important at All</span>
                             </div>
@@ -327,70 +332,15 @@
 
     <!--   end modal -->
     <!-- after the survey, show the user the car of the person who is their best match -->
-    <div class="card-container hidden">
-        <div class="card">
-            <div class="front">
-                <div class="cover">
-                    <img src="x_rotating_card_v1.4/images/rotating_card_thumb2.png" />
-                </div>
-                <div class="user">
-                    <img class="img-circle" src="x_rotating_card_v1.4/images/rotating_card_profile3.png" />
-                </div>
-                <div class="content">
-                    <div class="main">
-                        <h3 class="name">John Marvel</h3>
-                        <p class="profession">CEO</p>
-                        <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                    </div>
-                    <div class="footer">
-                        <i class="fa fa-mail-forward"></i> Auto Rotation
-                    </div>
-                </div>
-            </div>
-            <!-- end front panel -->
-            <div class="back">
-                <div class="header">
-                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                </div>
-                <div class="content">
-                    <div class="main">
-                        <h4 class="text-center">Job Description</h4>
-                        <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-
-                        <div class="stats-container">
-                            <div class="stats">
-                                <h4>235</h4>
-                                <p>
-                                    Followers
-                                </p>
-                            </div>
-                            <div class="stats">
-                                <h4>114</h4>
-                                <p>
-                                    Following
-                                </p>
-                            </div>
-                            <div class="stats">
-                                <h4>35</h4>
-                                <p>
-                                    Projects
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- end back panel -->
+    <div class="container">
+        <div class="card-container hidden">
         </div>
-        <!-- end card -->
     </div>
     <!-- end card-container -->
 
 
 </body>
 <script src="x_rotating_card_v1.4/js/jquery-1.10.2.js" type="text/javascript">
-
 </script>
 <script src="x_rotating_card_v1.4/js/bootstrap.min.js" type="text/javascript"></script>
 </script>

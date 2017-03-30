@@ -119,10 +119,21 @@ $(document).ready(function () {
         var title = $("<h4>");
         title.html("Survey Scores");
 
-        for (i = 0; i < friend.scores.length; i++){
-            var p = $("<p>");
-            p.html(questions[i].question + " = " + friend.scores[i]);
-            backMain.append(p);
+        if (typeof(friend.scores) == "undefined") {
+            var scores = friend["scores[]"];
+            console.log(friend.name + "'s scores were undefined in home.js.  Working around it.  Thanks, Renzo. ;)");
+            for (i = 0; i < scores.length; i++) {
+                var p = $("<p>");
+                p.html(questions[i].question + " = " + scores[i]);
+                backMain.append(p);
+            }
+        } else {
+            for (i = 0; i < friend.scores.length; i++) {
+                var p = $("<p>");
+                p.html(questions[i].question + " = " + friend.scores[i]);
+                backMain.append(p);
+            }
+
         }
 
         var backFooter = $("<div>");
@@ -132,7 +143,7 @@ $(document).ready(function () {
         var backBtn = $("<button>");
         backBtn.addClass("btn btn-simple");
         backBtn.attr("rel", "tooltip");
-        backBtn.attr("title","Flip Card");
+        backBtn.attr("title", "Flip Card");
         backBtn.html("Back");
         backBtn.attr("onclick", "rotateCard(this)");
         backFooter.append(backBtn);
