@@ -35,24 +35,46 @@
 
     <!--    navbar come here          -->
 
-
-
+    <nav class="navbar navbar-inverse opaque-navbar" style="border-radius: 0px;">
+        <div class="container nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">Friend Finder</div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="btn-link"><a href="/">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigate<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header btn-header">Take the Survey and Find Your Match</li>
+                            <li class="btn btn-primary btn-link"><a href="/survey">Survey</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- end navbar  -->
-
-
-
+    <div class="jumbotron">
+        <h1>Take the Survey to Find Your Best Match</h1>
+    </div>
     <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
     <div class="bootstrap-iso">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12 my-survey">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3  my-survey">
                     <div class="formden_header">
                         <h2>
-                            Friend Finder
-                        </h2>
-                        <p>
                             Tell us about yourself
-                        </p>
+                        </h2>
                     </div>
                     <form method="post" class="main-form">
                         <div class="form-group ">

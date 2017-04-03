@@ -6,26 +6,53 @@
     <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>See Other Friends</title>
+    <title>See Our Friends</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-
     <!--from rotating card-->
     <meta name="viewport" content="width=device-width" />
     <link href='/x_rotating_card_v1.4/css/bootstrap.css' rel='stylesheet' />
-    <link href='/x_rotating_card_v1.4/css/rotating-card.css' rel='stylesheet' />
-
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='/x_rotating_card_v1.4/css/rotating-card.css' rel='stylesheet' />
+    <!-- my css -->
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="title">
-            Welcome to FriendFinder!
-            <br>
-            <small>Browse Through Our Friends Seeking Friends</small>
-        </h1>
+    <nav class="navbar navbar-inverse opaque-navbar" style="border-radius: 0px;">
+        <div class="container nav-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">Friend Finder</div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="btn-link"><a href="/">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Navigate<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header btn-header">Take the Survey and Find Your Match</li>
+                            <li class="btn btn-primary btn-link"><a href="/survey">Survey</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <h1> Welcome to FriendFinder!</h1><br>
+        <h3>Browse Through Our Friends Seeking Friends</h3>
+    </div>
+    <div class="container cards">
+        <!-- cards will be added here via home.js -->
     </div>
 </body>
 <script src="x_rotating_card_v1.4/js/jquery-1.10.2.js" type="text/javascript">
@@ -49,8 +76,12 @@
         } else {
             $card.addClass('hover');
         }
+        if ($card.hasClass('touch')) {
+            $card.removeClass('touch');
+        } else {
+            $card.addClass('touch');
+        }
     }
-
 </script>
 
 </html>

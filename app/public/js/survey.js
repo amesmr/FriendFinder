@@ -131,7 +131,7 @@ $(document).ready(function () {
         $(".main-form").addClass("hidden");
 
         var card = $("<div>");
-        card.addClass("card");
+        card.addClass("single-card");
         $(".card-container").append(card);
 
         var front = $("<div>");
@@ -206,8 +206,16 @@ $(document).ready(function () {
         backMain.addClass("main");
         backContent.append(backMain);
 
-        var title = $("<h4>");
-        title.html("Survey Scores");
+        var backName = $("<h3>");
+        backName.addClass("name");
+        backName.html(friend.name);
+        backMain.append(backName);
+
+        var backMe = $("<h4>");
+        backMe.addClass("profession");
+        backMe.html("My Scores:");
+        backMain.append(backMe);
+
         if (typeof (friend.scores) == "undefined") {
             var scores = friend["scores[]"];
             console.log(friend.name + "'s scores were undefined in survey.js.  Working around it.  Thanks, Renzo. ;)");

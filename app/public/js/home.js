@@ -36,7 +36,7 @@ $(document).ready(function () {
 
         var card_cont = $("<div>");
         // card_cont.addClass("card-container manual-flip");
-        card_cont.addClass("card-container manual-flip");
+        card_cont.addClass("card-container");
         col.append(card_cont);
 
         var card = $("<div>");
@@ -92,11 +92,11 @@ $(document).ready(function () {
         var footer = $("<footer>");
         content.append(footer);
 
-        var button = $("<button>");
-        button.addClass("btn btn-simple");
-        button.attr("onclick", "rotateCard(this)");
-        button.html("Flip Over");
-        footer.append(button);
+        // var button = $("<button>");
+        // button.addClass("btn btn-simple");
+        // button.attr("onclick", "rotateCard(this)");
+        // button.html("Flip Over");
+        // footer.append(button);
 
         var fronti = $("<i>");
         fronti.addClass("fa fa-mail-forward");
@@ -116,8 +116,15 @@ $(document).ready(function () {
         backMain.addClass("main");
         backContent.append(backMain);
 
-        var title = $("<h4>");
-        title.html("Survey Scores");
+        var backName = $("<h3>");
+        backName.addClass("name");
+        backName.html(friend.name);
+        backMain.append(backName);
+
+        var backMe = $("<h4>");
+        backMe.addClass("profession");
+        backMe.html("My Scores:");
+        backMain.append(backMe);
 
         if (typeof(friend.scores) == "undefined") {
             var scores = friend["scores[]"];

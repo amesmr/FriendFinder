@@ -14,8 +14,12 @@
      color: red;
  }
 
+ .single-card {
+     margin-left: 25%;
+     max-width: 50%;
+ }
 
- .card{
-  margin-left: 25%;
-  max-width: 50%;
+ .jumbotron {
+     text-align: center;
+     vertical-align: middle;
  }
