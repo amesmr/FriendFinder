@@ -20,10 +20,10 @@ $(document).ready(function () {
         // start of flip card
         // front of card
         var thisRow = Math.floor(index / 2);
-        console.log("Index is " + index);
-        console.log("This row is " + thisRow);
+        // console.log("Index is " + index);
+        // console.log("This row is " + thisRow);
         if ((index % 2) == 0) {
-            console.log("Adding row " + thisRow);
+            // console.log("Adding row " + thisRow);
             var row = $("<div>");
             // row.addClass("row row" + thisRow);
             row.addClass("row cards" + thisRow);

@@ -97,7 +97,7 @@
     {
         "name": "Female",
         "index": "5",
-        "about_me": "I'm a woman seeking a man.  (you hope I'm a woman)",
+        "about_me": "I'm a woman seeking a man.  (You hope I'm a woman)",
         "seeking": "Just about anybody, I'm here aren't I?",
         "photo": "https://thoughtcatalog.files.wordpress.com/2014/04/screen-shot-2014-04-05-at-6-33-07-pm.png?w=584&h=387",
         "scores[]": [
@@ -148,6 +148,25 @@
             "1",
             "1",
             "5",
+            "3"
+        ]
+    },
+    {
+        "name": "The Dude",
+        "index": "8",
+        "about_me": "I'm a laid back bowler who has certain medical condition in Calif.",
+        "seeking": "I'm looking for somebody with a very open-minded physician.",
+        "photo": "https://s-media-cache-ak0.pinimg.com/564x/cd/58/06/cd5806b1d6978c32501f5dd2a631b033.jpg",
+        "scores[]": [
+            "5",
+            "5",
+            "5",
+            "1",
+            "5",
+            "1",
+            "5",
+            "3",
+            "3",
             "3"
         ]
     }

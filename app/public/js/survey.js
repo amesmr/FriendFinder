@@ -112,27 +112,32 @@ $(document).ready(function () {
 
 
     function addFriendCard(friend, questions) {
-        // start of flip card
-        // front of card
+        // hide the form
+        $(".bootstrap-iso").addClass("hidden");
+
         var row = $("<div>");
-        // row.addClass("row row" + thisRow);
+        row.addClass("row");
         $(".container").append(row);
+
         var col = $("<div>");
         col.addClass("col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4");
+        col.html("<h2>Meet Your Closest Match!</h2>")
         row.append(col);
 
-        var h2 = $("<h2>");
-        h2.html("Meet Your Closest Match!");
-        col.append(h2);
+        var row2 = $("<div>");
+        row2.addClass("row");
+        row.append(row2);
 
+        // start of flip card
+        // front of card
         var card_cont = $("<div>");
-        card_cont.addClass("manual-flip");
-        $(".card-container").removeClass("hidden");
-        $(".main-form").addClass("hidden");
+        // card_cont.addClass("card-container manual-flip");
+        card_cont.addClass("card-container col-md-4 col-sm-4");
+        row2.append(card_cont);
 
         var card = $("<div>");
-        card.addClass("single-card");
-        $(".card-container").append(card);
+        card.addClass("card single-card");
+        card_cont.append(card);
 
         var front = $("<div>");
         front.addClass("front");
